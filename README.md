@@ -31,7 +31,7 @@ After successfully completing the tasks, the student:
 5. [Train the model](#5-train-the-model)
 6. [Run the model on the robot (real time)](#6-run-the-model-on-the-robot-real-time)
 
-## 0. Setup & Installation
+## Task 0. Setup & Installation
 
 ### Hardware setup
 
@@ -82,13 +82,13 @@ sudo apt-get install cmake build-essential python3-dev pkg-config libavformat-de
 
 </details>
 
-## 1. 3D printing the cube
+## Task 1. 3D printing the cube
 
 Download the [3D cube](/3D_cube.stl) and print it. We will use it to train the robot for pick-and-place. The [3D container box](/3D_container_box.stl) is also available.
 
 Tip: try printing the cube in a different color than the box. It often makes training easier.
 
-## 2. Calibrate the robot
+## Task 2. Calibrate the robot
 
 In our setup, the follower robot is connected to `/dev/ttyACM1` and the leader is connected to `/dev/ttyACM0`.
 
@@ -118,7 +118,7 @@ First, move the robot to a position where all joints are roughly in the middle o
 
 Nice! Calibration is done. Next, we will play with the robots using teleoperation.
 
-## 3. Teleoperate
+## Task 3. Teleoperate
 
 We have two RealSense cameras: one in front, and one mounted on the robot (wrist). Run the following command to enable teleoperation and visualization in `rerun` viewer at the same time.
 
@@ -170,7 +170,7 @@ Now you can move the leader, and the follower will mirror the motion. Check the 
 
 Great work—this is the core skill you’ll need for collecting a good dataset.
 
-## 4. Record a dataset
+## Task 4. Record a dataset
 
 We will use the Hugging Face Hub to upload the dataset. Log in to Hugging Face and generate a token from [Hugging Face settings](https://huggingface.co/settings/tokens).
 
@@ -228,7 +228,7 @@ Locally your data will be stored in this folder: `~/.cache/huggingface/lerobot/{
 
 After successfully recording and uploading, you can [visualize the dataset online](https://huggingface.co/spaces/lerobot/visualize_dataset). Search for: `<your_hugging_face_user_name>/<repository_name>`.
 
-## 5. Train the model
+## Task 5. Train the model
 
 Now that you have a dataset, it’s time to train the model. We will use [SmolVLA](https://huggingface.co/lerobot/smolvla_base) as the base model.
 
@@ -245,6 +245,8 @@ It will ask for the API key—paste the one you generated.
 Now run the following command to start training. **Note:** Replace `sajibpra` with your `<your_hugging_face_user_name>` and `cube-pick-place` with your repository name.
 
 ```bash
+cd ~/lerobot/
+
 python src/lerobot/scripts/lerobot_train.py \
   --policy.path=lerobot/smolvla_base \
   --policy.push_to_hub=false \
@@ -273,7 +275,7 @@ huggingface-cli upload sajibpra/my_smolvla_local \
 
 Awesome - you have trained the model and uploaded it to the Hugging Face Hub.
 
-## 6. Run the model on the robot real-time
+## Task 6. Run the model on the robot real-time
 
 You have reached the final task: running the model on the robot in real time.
 
@@ -300,8 +302,10 @@ lerobot-record \
 
 Place the cube in front of the robot. If everything worked, the robot should pick it up and place it into the box. Watch the video below.
 
-![video](</attachment/SO-101_Train_SmolVLA_model_on_CPU_(2x).mp4>)
+![Video](</attachment/SO-101_Train_SmolVLA_model_on_CPU_(2x).mp4>)
 
-## Key Takeaways
+## Acknowledgements
 
-# Ackowledgement
+- [Hugging Face](https://huggingface.co/docs/lerobot/main/en/getting_started_real_world_robot)
+
+- [SmolVLA](https://huggingface.co/lerobot/smolvla_base)
