@@ -114,7 +114,7 @@ lerobot-calibrate \
 
 First, move the robot to a position where all joints are roughly in the middle of their ranges. After pressing Enter, move each joint through its full range of motion.
 
-[Calibration video](https://huggingface.co/docs/lerobot/en/so101#calibration-video)
+[How to calibration the robot video instruction](https://huggingface.co/docs/lerobot/en/so101#calibration-video)
 
 Nice! Calibration is done. Next, we will play with the robots using teleoperation.
 
