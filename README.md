@@ -232,7 +232,7 @@ After successfully recording and uploading, you can [visualize the dataset onlin
 
 Now that you have a dataset, it’s time to train the model. We will use [SmolVLA](https://huggingface.co/lerobot/smolvla_base) as the base model.
 
-Before we start training, go to [Weights & Biases (wandb)](https://wandb.ai/home), log in, and generate an API key.
+Before we start training, go to [Weights & Biases (wandb)](https://wandb.ai/home), log in, and generate an API key. Copy the API key in a note, you will requre it in the next step.
 
 In the terminal, run:
 
