@@ -18,7 +18,7 @@ After successfully completing the tasks, the student:
 # Prerequisites
 
 - Basic programming knowledge
-- Basic Linux command-line knowledge
+- Basic [Linux command-line](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview) knowledge
 - No previous robot experience required
 
 # Tasks
