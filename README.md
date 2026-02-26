@@ -197,9 +197,7 @@ Before you start recording, take a quick look at this example dataset: [cube-pic
 
 Recommended starting point: **50 episodes** at **30 FPS**.
 
-Run the following command to record your dataset.
-
-Note: Replace `sajibpra` with your Hugging Face username and `cube-pick-place` with your repository name.
+Run the following command to record your dataset. **Note:** Replace `sajibpra` with `<your_hugging_face_user_name>` and `cube-pick-place` with your repository name.
 
 ```bash
 lerobot-record \
