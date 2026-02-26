@@ -1,8 +1,6 @@
 # TET-harjoittelu 25.–26.3.2026
 
-During this TET week, students will get hands-on practice with a robotic arm. We will use the **SO-101 robot** and [SmolVLA](https://arxiv.org/pdf/2506.01844) for a **pick-and-place** imitation-learning task.
-
-The goal is simple (and fun): you will see how a robot can learn from demonstrations, run the learned policy in real time, and understand the basic idea of a Vision–Language–Action (VLA) model.
+During this TET internship, students will work with an articulated robotic arm system. The internship focuses on imitation learning using the **SO-101 robotic arm** and the [SmolVLA](https://arxiv.org/pdf/2506.01844) (Vision-Language-Action) model to perform a pick-and-place task. Students will participate in system setup, data collection, model training, and evaluation of autonomous robot behavior.
 
 | <p align="center"><img src="/attachment/front_camera_view.gif"/><br/></p> | <p align="center"><img src="/attachment/side_camera_view.gif"/><br/></p> |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
@@ -310,6 +308,8 @@ lerobot-record \
 
 Place the cube in front of the robot. If everything worked, the robot should pick it up and place it into the box. Watch the video below.
 
-![video](</attachment/SO-101%20Train%20SmolVLA%20model%20on%20CPU%20(2x).mp4>)
+![video](</attachment/SO-101_Train_SmolVLA_model_on_CPU_(2x).mp4>)
 
 ## Key Takeaways
+
+# Ackowledgement
