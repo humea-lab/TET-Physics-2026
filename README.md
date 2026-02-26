@@ -285,7 +285,7 @@ Awesome - you have trained the model and uploaded it to the Hugging Face Hub.
 
 You have reached the final task: running the model on the robot in real time.
 
-The [hardware setup](#0-setup--installation) is the same as when you recorded the data. This time, you do not need the leader robot - only the follower will perform the task autonomously.
+The [hardware setup](#hardware-setup) is the same as when you recorded the data. This time, you do not need the leader robot - only the follower will perform the task autonomously.
 
 Run the following command.
 
