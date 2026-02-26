@@ -302,7 +302,10 @@ lerobot-record \
 
 Place the cube in front of the robot. If everything worked perfectly, the robot should pick it up and place it into the box. Now you can evaluate the model. Watch the video below.
 
-https://github.com/user-attachments/assets/7c10ffe1-8790-495c-9978-38c9da2d726c
+https://github.com/user-attachments/assets/ec329be0-bca1-4899-8f53-4b51be944744
+
+
+
 
 Congrats 🎉! You have successfully completed all 6 tasks.
 
