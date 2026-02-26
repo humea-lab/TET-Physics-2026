@@ -36,9 +36,9 @@ After successfully completing the tasks, the student:
 ### Hardware setup
 
 1. Power on the SO-101 robot
-2. Connect the SO-101 **leader** robot to the PC
-3. Connect the SO-101 **follower** robot to the PC
-4. Connect the front and side Intel RealSense cameras to the PC
+2. Firstly, Connect the SO-101 **leader** robot to the PC
+3. Then Connect the SO-101 **follower** robot to the PC
+4. Lastly, Connect the front and side Intel RealSense cameras to the PC
 
 ### Dependencies
 
