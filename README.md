@@ -36,9 +36,9 @@ After successfully completing the tasks, the student:
 ### Hardware setup
 
 1. Power on the SO-101 robot
-2. Connect the SO-101 **leader** robot to the laptop
-3. Connect the SO-101 **follower** robot to the laptop
-4. Connect the front and side Intel RealSense cameras to the laptop
+2. Connect the SO-101 **leader** robot to the PC
+3. Connect the SO-101 **follower** robot to the PC
+4. Connect the front and side Intel RealSense cameras to the PC
 
 ### Dependencies
 
@@ -302,9 +302,7 @@ lerobot-record \
 
 Place the cube in front of the robot. If everything worked, the robot should pick it up and place it into the box. Watch the video below.
 
-
 https://github.com/user-attachments/assets/7c10ffe1-8790-495c-9978-38c9da2d726c
-
 
 ## Acknowledgements
 
