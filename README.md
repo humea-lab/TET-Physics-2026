@@ -1,52 +1,57 @@
-# TET-harjoitteluhakemus – Viikko 13 (23.–29.3.2026)
+# # TET-harjoittelu 25.–26.3.2026
 
-In this TET week, students practice using an Arm robot. We will use the **SO-101 robot** and [SmolVLA](https://arxiv.org/pdf/2506.01844) for a _pick and place_ Imitation training task. The goal is to learn how a robot learns and perform the task dynamically, and how Vision Language Action (VLA) model works.
+During this TET week, students will get hands-on practice with a robotic arm. We will use the **SO-101 robot** and [SmolVLA](https://arxiv.org/pdf/2506.01844) for a **pick-and-place** imitation-learning task.
+
+The goal is simple (and fun): you will see how a robot can learn from demonstrations, run the learned policy in real time, and understand the basic idea of a Vision–Language–Action (VLA) model.
+
+| <p align="center"><img src="/attachment/front_camera_view.gif"/><br/></p> | <p align="center"><img src="/attachment/side_camera_view.gif"/><br/></p> |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 
 # Learning Outcomes
 
-After sucessfully completing all the tasks, the student:
+After successfully completing the tasks, the student:
 
 - Understands basic robot operation
-- Can perform a pick and place task
-- Gains basic experience in machine training
-- Improves logical thinking and problem-solving skills
-- Hands-on experiement with 3D printing
+- Can perform a pick-and-place task
+- Gains beginner experience in training a model
+- Improves logical thinking and problem-solving
+- Gets hands-on experience with 3D printing
 
 # Prerequisites
 
-- Basic knowledge in programming
-- Basic knowledge in Linux commands
+- Basic programming knowledge
+- Basic Linux command-line knowledge
 - No previous robot experience required
 
 # Tasks
 
 0. [Setup & Installation](#0-setup--installation)
 1. [3D printing the cube](#1-3d-printing-the-cube)
-2. [Calibration the robot](#2-calibration-the-robot)
+2. [Calibrate the robot](#2-calibrate-the-robot)
 3. [Teleoperate](#3-teleoperate)
 4. [Record a dataset](#4-record-a-dataset)
 5. [Train the model](#5-train-the-model)
-6. [Run the model on the robot real-time](#6-run-the-model-on-the-robot-real-time)
+6. [Run the model on the robot (real time)](#6-run-the-model-on-the-robot-real-time)
 
 ## 0. Setup & Installation
 
 ### Hardware setup
 
 1. Power on the SO-101 robot
-2. Connect the SO-101 leader robot to Laptop
-3. Connect the SO-101 follwer robot to Laptop
-4. Connect the Front and Side Realsense cameras to the Laptop
+2. Connect the SO-101 **leader** robot to the laptop
+3. Connect the SO-101 **follower** robot to the laptop
+4. Connect the front and side Intel RealSense cameras to the laptop
 
-### Dependencis
+### Dependencies
 
-Step 1: Install miniforge
+Step 1: Install Miniforge
 
 ```bash
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
 ```
 
-Step 2: Environment Setup and Active conda
+Step 2: Create and activate a Conda environment
 
 ```bash
 conda create -y -n lerobot python=3.10
@@ -62,7 +67,7 @@ cd lerobot
 pip install -e .
 ```
 
-Step 4. Install SmolVLA
+Step 4: Install SmolVLA
 
 ```bash
 pip install -e ".[smolvla]"
@@ -71,7 +76,7 @@ pip install -e ".[smolvla]"
 <details>
   <summary>Troubleshooting</summary>
 
-If there is any building error apears then install the following dependencis on your device.
+If you see build errors, install the following dependencies:
 
 ```bash
 sudo apt-get install cmake build-essential python3-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libswresample-dev libavfilter-dev
@@ -81,11 +86,13 @@ sudo apt-get install cmake build-essential python3-dev pkg-config libavformat-de
 
 ## 1. 3D printing the cube
 
-Download the [3D cube](/3D_cube.stl) and print it. It will be used to train the robot pick and place. The [3D container box](/3D_container_box.stl) is also available to download. **Tips:** print the the cube using different color of the materials.
+Download the [3D cube](/3D_cube.stl) and print it. We will use it to train the robot for pick-and-place. The [3D container box](/3D_container_box.stl) is also available.
 
-## 2. Calibration the robot
+Tip: try printing the cube in a different color than the box. It often makes training easier.
 
-Our follower robot is connected on the port _/dev/ttyACM1_ and leader is on _/dev/ttyACM0_
+## 2. Calibrate the robot
+
+In our setup, the follower robot is connected to `/dev/ttyACM1` and the leader is connected to `/dev/ttyACM0`.
 
 Follower
 
@@ -96,8 +103,9 @@ lerobot-calibrate \
     --robot.id=my_awesome_follower_arm
 ```
 
-First you need to move the robot to the position where all joints are in the middle of their ranges. Then after pressing enter you have to move each joint through its full range of motion.
-Leader.
+First, move the robot to a position where all joints are roughly in the middle of their ranges. After pressing Enter, move each joint through its full range of motion.
+
+Leader
 
 ```bash
 lerobot-calibrate \
@@ -106,16 +114,15 @@ lerobot-calibrate \
     --teleop.id=my_awesome_leader_arm
 ```
 
-First you need to move the robot to the position where all joints are in the middle of their ranges. Then after pressing enter you have to move each joint through its full range of motion.
-Leader.
+First, move the robot to a position where all joints are roughly in the middle of their ranges. After pressing Enter, move each joint through its full range of motion.
 
 [Calibration video](https://huggingface.co/docs/lerobot/en/so101#calibration-video)
 
-Now all set, next we will play with robots using Teleoperate!
+Nice! Calibration is done. Next, we will play with the robots using teleoperation.
 
 ## 3. Teleoperate
 
-We have two Realsense cameras, one is in front and another one is mounted on the robot wrist roll. Run the following command which will active teleopration and visualization on `rerun` simultaneously.
+We have two RealSense cameras: one in front, and one mounted on the robot (wrist). Run the following command to enable teleoperation and visualization in `rerun` viewer at the same time.
 
 ```bash
 lerobot-teleoperate \
@@ -144,7 +151,7 @@ lerobot-teleoperate \
   --display_data=true
 ```
 
-Here front realsense camera `serial_number_or_name: 825312073829` and wrist roll camera `serial_number_or_name: 419122271321`.
+Here the front camera is `serial_number_or_name: 825312073829` and the side camera is `serial_number_or_name: 419122271321`.
 
 <details>
   <summary>Teleoperate without camera</summary>
@@ -161,15 +168,40 @@ lerobot-teleoperate \
 
 </details>
 
-Now you can use the Leader and follwer will do the same things. Check the `rerun` dashboard and Observe the robot joints positions.
+Now you can move the leader, and the follower will mirror the motion. Check the `rerun` dashboard and observe the joint positions.
 
-Great! Now we know how the robot joints positions moves and how to teleoperate.
+Great work—this is the core skill you’ll need for collecting a good dataset.
 
 ## 4. Record a dataset
 
-We will record the dataset to train our policy which will run in real-time at the end. Before you record the dataset please review this dataset [cube-pick-place](https://huggingface.co/spaces/lerobot/visualize_dataset?path=%2Fsajibpra%2Fcube-pick-place%2Fepisode_0), to understand how to collect a good data to train a model.
+We will use the Hugging Face Hub to upload the dataset. Log in to Hugging Face and generate a token from [Hugging Face settings](https://huggingface.co/settings/tokens).
 
-At least **Episodes:** 50, with**FPS:** 30 would be good be receommend.
+Run the following command and **replace** `${HUGGINGFACE_TOKEN}` with your generated token.
+
+```bash
+huggingface-cli login --token ${HUGGINGFACE_TOKEN} --add-to-git-credential
+```
+
+Run the following command to store your Hugging Face username in a variable:
+
+```bash
+HF_USER=$(hf auth whoami | head -n 1)
+echo $HF_USER
+```
+
+You will see something like:
+
+**user:** `<your_hugging_face_user_name>`
+
+Now we will record a dataset to train a policy that can run in real time at the end.
+
+Before you start recording, take a quick look at this example dataset: [cube-pick-place](https://huggingface.co/spaces/lerobot/visualize_dataset?path=%2Fsajibpra%2Fcube-pick-place%2Fepisode_0). It helps you understand what “good demonstrations” look like.
+
+Recommended starting point: **50 episodes** at **30 FPS**.
+
+Run the following command to record your dataset.
+
+Note: Replace `sajibpra` with your Hugging Face username and `cube-pick-place` with your repository name.
 
 ```bash
 lerobot-record \
@@ -196,14 +228,88 @@ lerobot-record \
 | `--dataset.episode_time_s=30`                | Per episode time is 30 second to record                          |
 | `--dataset.reset_time_s=5`                   | 5 second reset time between two episodes                         |
 
+Locally your data will be stored in this folder: `~/.cache/huggingface/lerobot/{repo-id}`.
+
+After successfully recording and uploading, you can [visualize the dataset online](https://huggingface.co/spaces/lerobot/visualize_dataset). Search for: `<your_hugging_face_user_name>/<repository_name>`.
+
 ## 5. Train the model
+
+Now that you have a dataset, it’s time to train the model. We will use [SmolVLA](https://huggingface.co/lerobot/smolvla_base) as the base model.
+
+Before we start training, go to [Weights & Biases (wandb)](https://wandb.ai/home), log in, and generate an API key.
+
+In the terminal, run:
+
+```bash
+wandb login
+```
+
+It will ask for the API key—paste the one you generated.
+
+Now run the following command to start training.
+
+Note: Replace `sajibpra` with your Hugging Face username and `cube-pick-place` with your repository name.
+
+```bash
+python src/lerobot/scripts/lerobot_train.py \
+  --policy.path=lerobot/smolvla_base \
+  --policy.push_to_hub=false \
+  --rename_map='{"observation.images.front": "observation.images.camera1", "observation.images.side": "observation.images.camera2"}' \
+  --dataset.repo_id=sajibpra/cube-pick-place \
+  --batch_size=20 \
+  --steps=20000 \
+  --output_dir=outputs/train/my_smolvla_local \
+  --job_name=my_smolvla_training_local \
+  --policy.device=cuda \
+  --wandb.enable=true
+```
+
+For reference, training on the following PC took about ~2 hours:
+
+**GPU:** NVIDIA GeForce RTX 4070 Ti SUPER
+**VRAM:** 16GB
+**RAM:** 32GB
+
+After completing training, upload your trained model to Hugging Face.
+
+Note: Replace `sajibpra` with your Hugging Face username.
+
+```bash
+huggingface-cli upload sajibpra/my_smolvla_local \
+  outputs/train/my_smolvla_local/checkpoints/last/pretrained_model
+```
+
+Awesome - you have trained the model and uploaded it to the Hugging Face Hub.
 
 ## 6. Run the model on the robot real-time
 
-## Key Takeaways
+You have reached the final task: running the model on the robot in real time.
 
-- Robots move based on programs and coordinates
-- Safety is always the most important rule
-- Programming requires precision
-- Small changes can affect the result
-- Robotics combines math, physics, and engineering
+The [hardware setup](#0-setup--installation) is the same as when you recorded the data. This time, you do not need the leader robot - only the follower will perform the task autonomously.
+
+Run the following command.
+
+Note: Replace `sajibpra` with your Hugging Face username.
+
+```bash
+lerobot-record \
+  --robot.type=so101_follower \
+  --robot.port=/dev/ttyACM1 \
+  --robot.id=my_awesome_follower_arm \
+  --robot.cameras="{ front: {type: intelrealsense, serial_number_or_name: 825312073829, width: 640, height: 480, fps: 30}, side: {type: intelrealsense, serial_number_or_name: 419122271321, width: 640, height: 480, fps: 30}}" \
+  --policy.input_features='{"observation.images.front":  {"type":"VISUAL","shape":[3,256,256]}, "observation.images.side": {"type":"VISUAL","shape":[3,256,256]}}' \
+  --policy.empty_cameras=1 \
+  --display_data=false \
+  --dataset.repo_id=sajibpra/eval_cube_pick_place \
+  --dataset.single_task="Put cube into the box" \
+  --dataset.num_episodes=10 \
+  --dataset.episode_time_s=999 \
+  --policy.path=sajibpra/my_smolvla_local \
+  --policy.push_to_hub=false
+```
+
+Place the cube in front of the robot. If everything worked, the robot should pick it up and place it into the box. Watch the video below.
+
+![video](</attachment/SO-101%20Train%20SmolVLA%20model%20on%20CPU%20(2x).mp4>)
+
+## Key Takeaways
