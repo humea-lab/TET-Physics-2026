@@ -1,4 +1,4 @@
-# # TET-harjoittelu 25.–26.3.2026
+# TET-harjoittelu 25.–26.3.2026
 
 During this TET week, students will get hands-on practice with a robotic arm. We will use the **SO-101 robot** and [SmolVLA](https://arxiv.org/pdf/2506.01844) for a **pick-and-place** imitation-learning task.
 
