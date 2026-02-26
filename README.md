@@ -300,9 +300,11 @@ lerobot-record \
   --policy.push_to_hub=false
 ```
 
-Place the cube in front of the robot. If everything worked, the robot should pick it up and place it into the box. Watch the video below.
+Place the cube in front of the robot. If everything worked perfectly, the robot should pick it up and place it into the box. Watch the video below.
 
 https://github.com/user-attachments/assets/7c10ffe1-8790-495c-9978-38c9da2d726c
+
+Congrats 🎉! You have successfully completed all 6 tasks.
 
 ## Acknowledgements
 
