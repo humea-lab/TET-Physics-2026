@@ -244,9 +244,7 @@ wandb login
 
 It will ask for the API key—paste the one you generated.
 
-Now run the following command to start training.
-
-Note: Replace `sajibpra` with your H`<your_hugging_face_user_name>` and `cube-pick-place` with your repository name.
+Now run the following command to start training. **Note:** Replace `sajibpra` with your H`<your_hugging_face_user_name>` and `cube-pick-place` with your repository name.
 
 ```bash
 python src/lerobot/scripts/lerobot_train.py \
