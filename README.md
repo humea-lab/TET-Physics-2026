@@ -246,7 +246,7 @@ It will ask for the API key—paste the one you generated.
 
 Now run the following command to start training.
 
-Note: Replace `sajibpra` with your Hugging Face username and `cube-pick-place` with your repository name.
+Note: Replace `sajibpra` with your H`<your_hugging_face_user_name>` and `cube-pick-place` with your repository name.
 
 ```bash
 python src/lerobot/scripts/lerobot_train.py \
@@ -264,13 +264,11 @@ python src/lerobot/scripts/lerobot_train.py \
 
 For reference, training on the following PC took about ~2 hours:
 
-**GPU:** NVIDIA GeForce RTX 4070 Ti SUPER
-**VRAM:** 16GB
-**RAM:** 32GB
+- **GPU:** NVIDIA GeForce RTX 4070 Ti SUPER
+- **VRAM:** 16GB
+- **RAM:** 32GB
 
-After completing training, upload your trained model to Hugging Face.
-
-Note: Replace `sajibpra` with your Hugging Face username.
+After completing training, upload your trained model to Hugging Face. **Note:** Replace `sajibpra` with your `<your_hugging_face_user_name>`.
 
 ```bash
 huggingface-cli upload sajibpra/my_smolvla_local \
@@ -285,9 +283,7 @@ You have reached the final task: running the model on the robot in real time.
 
 The [hardware setup](#hardware-setup) is the same as when you recorded the data. This time, you do not need the leader robot - only the follower will perform the task autonomously.
 
-Run the following command.
-
-Note: Replace `sajibpra` with your Hugging Face username.
+Run the following command. **Note:** Replace `sajibpra` with `<your_hugging_face_user_name>`.
 
 ```bash
 lerobot-record \
