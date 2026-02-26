@@ -302,7 +302,9 @@ lerobot-record \
 
 Place the cube in front of the robot. If everything worked, the robot should pick it up and place it into the box. Watch the video below.
 
-![Video](</attachment/SO-101_Train_SmolVLA_model_on_CPU_(2x).mp4>)
+
+https://github.com/user-attachments/assets/7c10ffe1-8790-495c-9978-38c9da2d726c
+
 
 ## Acknowledgements
 
