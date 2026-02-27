@@ -232,7 +232,7 @@ After successfully recording and uploading, you can [visualize the dataset onlin
 
 Now that you have a dataset, it’s time to train the model. We will use [SmolVLA](https://huggingface.co/lerobot/smolvla_base) as the base model.
 
-Before we start training, go to [Weights & Biases (wandb)](https://wandb.ai/home), log in, and generate an API key. Copy the API key in a note, you will requre it in the next step.
+Before we start training, go to [Weights & Biases (wandb)](https://wandb.ai/home), log in, and generate an API key. Copy the API key in a note, you will require it in the next step.
 
 In the terminal, run:
 
@@ -304,13 +304,10 @@ Place the cube in front of the robot. If everything worked perfectly, the robot 
 
 https://github.com/user-attachments/assets/ec329be0-bca1-4899-8f53-4b51be944744
 
-
-
-
 Congrats 🎉! You have successfully completed all 6 tasks.
 
-## Acknowledgements
+## References
 
-- [Hugging Face](https://huggingface.co/docs/lerobot/main/en/getting_started_real_world_robot)
+1. Hugging Face, [LeRobot: Getting Started with a Real-World Robot](https://huggingface.co/docs/lerobot/main/en/getting_started_real_world_robot)
 
-- [SmolVLA](https://huggingface.co/lerobot/smolvla_base)
+2. Hugging Face, [SmolVLA Base (Model Card)](https://huggingface.co/lerobot/smolvla_base)
