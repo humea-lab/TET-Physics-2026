@@ -23,13 +23,13 @@ After successfully completing the tasks, the student:
 
 # Tasks
 
-0. [Setup & Installation](#0-setup--installation)
-1. [3D printing the cube](#1-3d-printing-the-cube)
-2. [Calibrate the robot](#2-calibrate-the-robot)
-3. [Teleoperate](#3-teleoperate)
-4. [Record a dataset](#4-record-a-dataset)
-5. [Train the model](#5-train-the-model)
-6. [Run the model on the robot (real time)](#6-run-the-model-on-the-robot-real-time)
+0. [Setup & Installation](#task-0-setup--installation)
+1. [3D printing the cube](#task-1-3d-printing-the-cube)
+2. [Calibrate the robot](#task-2-calibrate-the-robot)
+3. [Teleoperate](#task-3-teleoperate)
+4. [Record a dataset](#task-4-record-a-dataset)
+5. [Train the model](#task-5-train-the-model)
+6. [Run the model on the robot real-time](#task-6-run-the-model-on-the-robot-real-time)
 
 ## Task 0. Setup & Installation
 
