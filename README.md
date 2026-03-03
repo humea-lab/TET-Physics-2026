@@ -168,7 +168,7 @@ lerobot-teleoperate \
 
 Now you can move the leader, and the follower will mirror the motion. Check the `rerun` dashboard and observe the joint positions.
 
-Great work—this is the core skill you’ll need for collecting a good dataset.
+Great work! This is the core skill you’ll need for collecting a good dataset.
 
 ## Task 4. Record a dataset
 
@@ -273,7 +273,7 @@ huggingface-cli upload sajibpra/my_smolvla_local \
   outputs/train/my_smolvla_local/checkpoints/last/pretrained_model
 ```
 
-Awesome - you have trained the model and uploaded it to the Hugging Face Hub.
+Awesome! You have trained the model and uploaded it to the Hugging Face Hub.
 
 ## Task 6. Run the model on the robot real-time
 
