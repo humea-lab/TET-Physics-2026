@@ -48,6 +48,17 @@ wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforg
 bash Miniforge3-$(uname)-$(uname -m).sh
 ```
 
+<details>
+  <summary>What is Miniforge? Why we install it?</summary>
+
+Miniforge is a small tool that installs Conda. Conda helps us create a clean Python environment for our project.
+
+We install Miniforge so you can use the same Python version and the same packages. This makes the setup easier and helps avoid errors.
+
+In short, Miniforge keeps the project organized and makes the commands work more reliably on different computers.
+
+</details>
+
 Step 2: Create and activate a Conda environment
 
 ```bash
@@ -56,19 +67,58 @@ conda activate lerobot
 conda install ffmpeg -c conda-forge
 ```
 
+<details>
+  <summary>What is a Conda environment? Why do we create it?</summary>
+
+A Conda environment is a separate workspace for one project.
+
+We create it so this robot project has its own Python (version 3.10) and its own packages.
+
+This helps beginners because commands work the same way for everyone, and it prevents conflicts with other projects on your computer.
+
+In this step:
+`conda create` makes the environment,
+`conda activate` turns it on,
+and `conda install ffmpeg` adds a tool needed for video and data processing.
+
+</details>
+
 Step 3: Install LeRobot
 
 ```bash
 git clone https://github.com/huggingface/lerobot.git
 cd lerobot
 pip install -e .
+
 ```
+
+<details>
+  <summary>What is LeRobot framework? Why we install it?</summary>
+
+LeRobot is a framework made by Hugging Face to teach robots with data.
+
+In this project, we use LeRobot to control the robot, record demonstrations, train a model, and test if the robot can do the task by itself.
+
+We install LeRobot because it gives us ready-made tools for every step, so beginners can follow one clear workflow.
+
+</details>
 
 Step 4: Install SmolVLA
 
 ```bash
 pip install -e ".[smolvla]"
 ```
+
+<details>
+  <summary>What is SmolVLA? Why do we install it?</summary>
+
+SmolVLA is the AI model we use to teach the robot from examples.
+
+After we install LeRobot, we install SmolVLA so training and robot prediction commands can work.
+
+In simple words: LeRobot is the toolbox, and SmolVLA is the learning brain inside this project.
+
+</details>
 
 <details>
   <summary>Troubleshooting</summary>
