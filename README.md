@@ -18,7 +18,22 @@ After successfully completing the tasks, the student:
 # Prerequisites
 
 - Basic programming knowledge
-- Basic [Linux command-line](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview) knowledge
+- You can follow instructions and copy-paste commands carefully
+- Basic [Linux command-line](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview) knowledge is helpful, but not required
+
+# Beginner Notes (Read First)
+
+- Open a terminal and run commands one by one.
+- Copy commands exactly. A small typo can break a step.
+- Wait for one command to finish before running the next command.
+- If a command shows an error, read the message and ask the instructor.
+- Keep this README open while working.
+
+How to read command placeholders:
+
+- Text like `<your_hugging_face_user_name>` means you must replace it with your own value.
+- Text like `${HUGGINGFACE_TOKEN}` means paste your own token there.
+- Do not type `<` or `>` when replacing values.
 
 # Tasks
 
@@ -34,6 +49,12 @@ After successfully completing the tasks, the student:
 
 ### Hardware setup
 
+Safety first:
+
+- Keep fingers away from moving robot joints.
+- Do not force robot joints by hand while the robot is powered.
+- Keep cables tidy so they do not get pulled during movement.
+
 1. Power on the SO-101 robot
 2. Firstly, Connect the SO-101 **leader** robot to the PC
 3. Then Connect the SO-101 **follower** robot to the PC
@@ -47,6 +68,16 @@ After successfully completing the tasks, the student:
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
 ```
+
+After installation, close and reopen the terminal.
+
+Quick check:
+
+```bash
+conda --version
+```
+
+If you see a version number, Miniforge is ready.
 
 <details>
   <summary>What is Miniforge? Why we install it?</summary>
@@ -66,6 +97,14 @@ conda create -y -n lerobot python=3.10
 conda activate lerobot
 conda install ffmpeg -c conda-forge
 ```
+
+Quick check:
+
+```bash
+conda info --envs
+```
+
+You should see an environment called `lerobot`.
 
 <details>
   <summary>What is a Conda environment? Why do we create it?</summary>
@@ -139,6 +178,14 @@ Tip: try printing the cube in a different color than the box. It often makes tra
 
 In our setup, the follower robot is connected to `/dev/ttyACM1` and the leader is connected to `/dev/ttyACM0`.
 
+Before calibration, verify device ports:
+
+```bash
+ls /dev/ttyACM*
+```
+
+If the port numbers are different on your PC, replace them in the commands below.
+
 Follower
 
 ```bash
@@ -161,7 +208,7 @@ lerobot-calibrate \
 
 First, move the robot to a position where all joints are roughly in the middle of their ranges. After pressing Enter, move each joint through its full range of motion.
 
-[How to calibration the robot (video instruction)](https://huggingface.co/docs/lerobot/en/so101#calibration-video)
+[How to calibrate the robot (video instruction)](https://huggingface.co/docs/lerobot/en/so101#calibration-video)
 
 Nice! Calibration is done. Next, we will play with the robots using teleoperation.
 
@@ -226,6 +273,8 @@ Run the following command and **replace** `${HUGGINGFACE_TOKEN}` with your gener
 ```bash
 huggingface-cli login --token ${HUGGINGFACE_TOKEN} --add-to-git-credential
 ```
+
+You can create a token here: [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens).
 
 Run the following command to store your Hugging Face username in a variable:
 
@@ -312,6 +361,8 @@ For reference, training on the following PC took about ~2 hours:
 - **GPU:** NVIDIA GeForce RTX 4070 Ti SUPER
 - **VRAM:** 16GB
 - **RAM:** 32GB
+
+If your PC is slower, training can take much longer. That is normal.
 
 After completing training, upload your trained model to Hugging Face. **Note:** Replace `sajibpra` with your `<your_hugging_face_user_name>`.
 
