@@ -51,7 +51,8 @@ How to read command placeholders:
 
 > [!WARNING]
 > Safety first.
-> Keep fingers away from moving robot joints.
+>
+> 1. Keep fingers away from moving robot joints.
 
 > Do not force robot joints by hand while the robot is powered.
 
