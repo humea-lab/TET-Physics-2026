@@ -79,7 +79,7 @@ After installation, close and reopen the terminal.
 conda --version
 ```
 
-If you see a version number, Miniforge is ready.
+If you see a version number, Miniforge is ready 👍.
 
 </details>
 
