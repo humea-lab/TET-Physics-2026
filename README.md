@@ -179,7 +179,8 @@ sudo apt-get install cmake build-essential python3-dev pkg-config libavformat-de
 
 Download the [3D cube](/3D_cube.stl) and print it. We will use it to train the robot for pick-and-place. The [3D container box](/3D_container_box.stl) is also available.
 
-Tip: try printing the cube in a different color than the box. It often makes training easier.
+> [!TIP]
+> Try printing the cube in a different color than the box. It often makes training easier.
 
 ## Task 2. Calibrate the robot
 
