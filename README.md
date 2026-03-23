@@ -50,9 +50,13 @@ How to read command placeholders:
 ### Hardware setup
 
 > [!WARNING]
+
 > Safety first.
+
 > Keep fingers away from moving robot joints.
+
 > Do not force robot joints by hand while the robot is powered.
+
 > Keep cables tidy so they do not get pulled during movement.
 
 1. Power on the SO-101 robot
