@@ -114,9 +114,7 @@ pip install -e ".[smolvla]"
 
 SmolVLA is the AI model we use to teach the robot from examples.
 
-After we install LeRobot, we install SmolVLA so training and robot prediction commands can work.
-
-In simple words: LeRobot is the toolbox, and SmolVLA is the learning brain inside this project.
+After we install LeRobot, we install SmolVLA so training and robot prediction commands can work. In simple words: LeRobot is the toolbox, and SmolVLA is the learning brain inside this project.
 
 </details>
 
