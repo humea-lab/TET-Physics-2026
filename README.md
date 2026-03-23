@@ -72,13 +72,16 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 
 After installation, close and reopen the terminal.
 
-Quick check:
+<details>
+  <summary>Quick check:</summary>
 
 ```bash
 conda --version
 ```
 
 If you see a version number, Miniforge is ready.
+
+</details>
 
 <details>
   <summary>What is Miniforge? Why we install it?</summary>
@@ -99,13 +102,16 @@ conda activate lerobot
 conda install ffmpeg -c conda-forge
 ```
 
-Quick check:
+<details>
+  <summary>Quick check:</summary>
 
 ```bash
 conda info --envs
 ```
 
 You should see an environment called `lerobot`.
+
+</details>
 
 <details>
   <summary>What is a Conda environment? Why do we create it?</summary>
