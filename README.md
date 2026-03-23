@@ -41,7 +41,7 @@ After successfully completing the tasks, the student:
 
 ### Dependencies
 
-Step 1: Install Miniforge
+**Step 1: Install Miniforge**
 
 ```bash
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
@@ -59,7 +59,7 @@ In short, Miniforge keeps the project organized and makes the commands work more
 
 </details>
 
-Step 2: Create and activate a Conda environment
+**Step 2: Create and activate a Conda environment**
 
 ```bash
 conda create -y -n lerobot python=3.10
@@ -83,7 +83,7 @@ and `conda install ffmpeg` adds a tool needed for video and data processing.
 
 </details>
 
-Step 3: Install LeRobot
+**Step 3: Install LeRobot**
 
 ```bash
 git clone https://github.com/huggingface/lerobot.git
@@ -103,7 +103,7 @@ We install LeRobot because it gives us ready-made tools for every step, so begin
 
 </details>
 
-Step 4: Install SmolVLA
+**Step 4: Install SmolVLA**
 
 ```bash
 pip install -e ".[smolvla]"
