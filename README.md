@@ -19,7 +19,7 @@ After successfully completing the tasks, the student:
 
 - Basic programming knowledge
 - You can follow instructions and copy-paste commands carefully
-- Basic [Linux command-line](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview) knowledge is helpful, but not required
+- Basic [Linux command-line](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview) knowledge is helpful.
 
 # Beginner Notes (Read First)
 
@@ -49,11 +49,12 @@ How to read command placeholders:
 
 ### Hardware setup
 
-Safety first:
+> [!WARNING]
+> Safety first:
 
-- Keep fingers away from moving robot joints.
-- Do not force robot joints by hand while the robot is powered.
-- Keep cables tidy so they do not get pulled during movement.
+> - Keep fingers away from moving robot joints.
+> - Do not force robot joints by hand while the robot is powered.
+> - Keep cables tidy so they do not get pulled during movement.
 
 1. Power on the SO-101 robot
 2. Firstly, Connect the SO-101 **leader** robot to the PC
