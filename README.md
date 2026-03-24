@@ -61,6 +61,8 @@ How to read command placeholders:
 3. Then Connect the SO-101 **follower** robot to the PC
 4. Lastly, Connect the front and side Intel RealSense cameras to the PC
 
+![image](/attachment/hardware_setup.jpeg)
+
 ### Dependencies
 
 **Step 1: Install Miniforge**
