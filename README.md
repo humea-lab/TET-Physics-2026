@@ -102,6 +102,7 @@ In short, Miniforge keeps the project organized and makes the commands work more
 conda create -y -n lerobot python=3.10
 conda activate lerobot
 conda install ffmpeg -c conda-forge
+pip install evdev
 ```
 
 <details>
@@ -137,7 +138,7 @@ and `conda install ffmpeg` adds a tool needed for video and data processing.
 git clone https://github.com/huggingface/lerobot.git
 cd lerobot
 pip install -e .
-
+pip install -e ".[feetech]"
 ```
 
 <details>
@@ -166,6 +167,13 @@ After we install LeRobot, we install SmolVLA so training and robot prediction co
 
 </details>
 
+**Step 5: Install realsense**
+
+```bash
+pip install pyrealsense2
+pip install lerobot[intelrealsense]
+```
+
 <details>
   <summary>Troubleshooting</summary>
 
@@ -192,6 +200,12 @@ Before calibration, verify device ports:
 
 ```bash
 ls /dev/ttyACM*
+```
+
+Find the USB ports associated with each arm, run the command and disconnect the MotorBus when prompted:
+
+```bash
+lerobot-find-port
 ```
 
 If the port numbers are different on your PC, replace them in the commands below.
