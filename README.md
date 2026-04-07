@@ -434,7 +434,7 @@ Student decided to train the robot to make tower using the cubes. After completi
 
 Recorded data visualization: [Huggingface hub](https://huggingface.co/spaces/lerobot/visualize_dataset?path=%2Fsajibpra%2Fmake-cube-tower%2Fepisode_0)
 
-![video](/attachment/TET-Week%202026.mp4)
+[![video](/attachment/hardware_setup.jpeg)](/attachment/TET-Week%202026.mp4)
 
 ## References
 
