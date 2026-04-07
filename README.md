@@ -430,7 +430,7 @@ Congrats 🎉! You have successfully completed all 6 tasks.
 
 # Result
 
-Student decided to train the robot to make tower using the cubes. After completing all the tasks following the result was achieved.
+Students decided to train the robot to make tower using the cubes. After completing all the tasks following the result was achieved.
 
 Recorded data visualization: [Huggingface hub](https://huggingface.co/spaces/lerobot/visualize_dataset?path=%2Fsajibpra%2Fmake-cube-tower%2Fepisode_0)
 
