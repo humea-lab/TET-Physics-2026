@@ -428,6 +428,12 @@ https://github.com/user-attachments/assets/ec329be0-bca1-4899-8f53-4b51be944744
 
 Congrats 🎉! You have successfully completed all 6 tasks.
 
+# Result
+
+Student decided to train the robot to make tower using the cubes. After completing all the tasks following the result was achieved.
+
+Recorded data visualization: [Huggingface hub](https://huggingface.co/spaces/lerobot/visualize_dataset?path=%2Fsajibpra%2Fmake-cube-tower%2Fepisode_0)
+
 ## References
 
 1. Hugging Face, [LeRobot: Getting Started with a Real-World Robot](https://huggingface.co/docs/lerobot/main/en/getting_started_real_world_robot)
