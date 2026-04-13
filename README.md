@@ -1,4 +1,4 @@
-# TET-harjoittelu 25.–26.3.2026
+# TET-harjoittelu 25.–26.3.2026 and 13.04.2026
 
 During this TET internship, students will work with an articulated robotic arm system. The internship focuses on imitation learning using the **SO-101 robotic arm** and the [SmolVLA](https://arxiv.org/pdf/2506.01844) (Vision-Language-Action) model to perform a pick-and-place task. Students will participate in system setup, data collection, model training, and evaluation of autonomous robot behavior.
 
