@@ -304,7 +304,7 @@ Run the following command to store your Hugging Face username in a variable:
 
 ```bash
 HF_USER=$(hf auth whoami | head -n 1)
-echo $HF_USER
+hf auth whoami
 ```
 
 You will see something like:
@@ -433,10 +433,6 @@ Congrats 🎉! You have successfully completed all 6 tasks.
 Students decided to train the robot to make tower using the cubes. After completing all the tasks following the result was achieved.
 
 Recorded data visualization: [Huggingface hub](https://huggingface.co/spaces/lerobot/visualize_dataset?path=%2Fsajibpra%2Fmake-cube-tower%2Fepisode_0)
-
-**Play the Video:**
-
-[![video](https://i.etsystatic.com/10919371/r/il/155a7d/1563938723/il_570xN.1563938723_1rmr.jpg)](/attachment/TET-Week%202026.mp4)
 
 ## References
 
